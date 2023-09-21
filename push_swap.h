@@ -6,11 +6,14 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:40 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/21 12:43:38 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:11:03 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include "libft/libft.h"
+
 
 #endif
