@@ -12,24 +12,40 @@
 
 #include "push_swap.h"
 
-t_list	*ft_create_a_list(char **arr)
+static void	ft_free_array(char **arr)
 {
+	int	i;
+
+	i = -1;
+	while (arr[++i])
+		free(arr[i]);
+	free(arr);
+}
+
+static void	ft_create_a_list(char **argv, int argc, t_list **stack_a)
+{
+	t_list	*new;
+	char	**arr;
 	int		i;
-	t_list	*stack_a;
-	t_list	*temp;
 	int		*int_ptr;
 
-	i = 1;
-	stack_a = NULL;
-	while (arr[i])
+	i = -1;
+	if (argc == 2)
+		arr = ft_split(argv[1], ' ');
+	else
+	{
+		i = 0;
+		arr = argv;
+	}
+	while (arr[++i])
 	{
 		int_ptr = malloc(sizeof(int));
 		*int_ptr = ft_atoi(arr[i]);
-		temp = ft_lstnew(int_ptr);
-		ft_lstadd_front(&stack_a, temp);
-		i++;
+		new = ft_lstnew(int_ptr);
+		ft_lstadd_back(stack_a, new);
 	}
-	return (stack_a);
+	if (argc == 2)
+		ft_free_array(arr);
 }
 
 t_list	*ft_create_b_list(unsigned int size)
@@ -50,23 +66,21 @@ t_list	*ft_create_b_list(unsigned int size)
 
 int	main(int argc, char *argv[])
 {
-	t_list	*stack_a;
-	//t_list	*stack_b;
-	//t_list	*temp;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
-	stack_a = NULL;
-	//stack_b = NULL;
-	stack_a = ft_create_a_list(argv);
-	//temp = stack_a;
-	//stack_b = ft_create_b_list(6);
-	if (argc)
+	if (argc < 2)
+		return (-1);
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
+	*stack_a = NULL;
+	*stack_b = NULL;
+	ft_create_a_list(argv, argc, stack_a);
+	while ((*stack_a))
 	{
-		while (stack_a)
-		{
-			ft_printf("%d\n", *((int *)stack_a->content));
-			stack_a = stack_a->next;
-		}
-		ft_printf("\na     b\n");
+		ft_printf("%d\n", *((int *)(*stack_a)->content));
+		*stack_a = (*stack_a)->next;
 	}
+	ft_printf("\na     b\n");
 	return (0);
 }
