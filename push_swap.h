@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:40 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/23 13:04:15 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/23 18:35:43 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 typedef struct s_list
 {
 	int				content;
-	int				i;
+	int				simple;
 	struct s_list	*next;
 }	t_list;
 
-void    ft_print_error(char *error_message);
-int     main(int argc, char *argv[]);
+void	ft_print_error(char *error_message);
+int		main(int argc, char *argv[]);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -43,5 +43,8 @@ int		pa(t_list **stack_a, t_list **stack_b);
 int		pb(t_list **stack_a, t_list **stack_b);
 
 void	ft_print_stack(t_list *first);
+int		ft_find_most_bits(t_list **stack);
+void	ft_simplify_numbers(t_list **stack);
+void	ft_print_simple_stack(t_list *first);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/23 13:14:16 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/23 18:55:45 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,17 +74,10 @@ int	main(int argc, char *argv[])
 	*stack_b = NULL;
 	ft_create_a_list(argv, argc, stack_a);
 	ft_print_stack(*stack_a);
-	pb(stack_a, stack_b);
-	ft_printf("STACK_A:\n");
+	ft_simplify_numbers(stack_a);
+	rra(stack_a);
 	ft_print_stack(*stack_a);
-	ft_printf("STACK_B:\n");
-	ft_print_stack(*stack_b);
-	pa(stack_a, stack_b);
-	ft_printf("STACK_A:\n");
-	ft_print_stack(*stack_a);
-	ft_printf("STACK_B:\n");
-	ft_print_stack(*stack_b);
-	ft_printf("\na     b\n");
+	ft_print_simple_stack(*stack_a);
 	free(stack_a);
 	free(stack_b);
 	return (0);

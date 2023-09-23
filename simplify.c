@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   simplify.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 13:22:36 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/23 18:39:17 by codespace        ###   ########.fr       */
+/*   Created: 2023/09/23 18:13:51 by codespace         #+#    #+#             */
+/*   Updated: 2023/09/23 18:34:33 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_error(char *error_message)
+static t_list	*ft_find_next_smallest(t_list **stack)
 {
-	ft_printf("%s\n", error_message);
-	exit (0);
-}
+	t_list	*top;
+	t_list	*min;
 
-void	ft_print_stack(t_list *first)
-{
-	t_list	*tmp;
-
-	tmp = first;
-	while (tmp != NULL)
+	top = *stack;
+	min = NULL;
+	while (top)
 	{
-		ft_printf("%d\n", tmp->content);
-		tmp = tmp->next;
+		if (top->simple == -1 && (min == NULL || top->content < min->content))
+			min = top;
+		top = top->next;
 	}
+	return (min);
 }
 
-void	ft_print_simple_stack(t_list *first)
+void	ft_simplify_numbers(t_list **stack)
 {
-	t_list	*tmp;
+	int		simp;
+	t_list	*top;
 
-	tmp = first;
-	while (tmp != NULL)
+	top = ft_find_next_smallest(stack);
+	simp = 0;
+	while (top)
 	{
-		ft_printf("%d\n", tmp->simple);
-		tmp = tmp->next;
+		top->simple = simp++;
+		top = ft_find_next_smallest(stack);
 	}
 }

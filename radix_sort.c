@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/22 13:22:36 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/23 18:39:17 by codespace        ###   ########.fr       */
+/*   Created: 2023/09/23 17:39:27 by codespace         #+#    #+#             */
+/*   Updated: 2023/09/23 18:58:17 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_error(char *error_message)
+int	ft_find_most_bits(t_list **stack)
 {
-	ft_printf("%s\n", error_message);
-	exit (0);
-}
+	int		max;
+	int		bits;
+	t_list	*top;
 
-void	ft_print_stack(t_list *first)
-{
-	t_list	*tmp;
-
-	tmp = first;
-	while (tmp != NULL)
+	top = *stack;
+	max = top->content;
+	while (top)
 	{
-		ft_printf("%d\n", tmp->content);
-		tmp = tmp->next;
+		if (top->content > max)
+			max = top->content;
+		top = top->next;
 	}
-}
-
-void	ft_print_simple_stack(t_list *first)
-{
-	t_list	*tmp;
-
-	tmp = first;
-	while (tmp != NULL)
-	{
-		ft_printf("%d\n", tmp->simple);
-		tmp = tmp->next;
-	}
+	while ((max >> bits) != 0)
+		bits++;
+	return (bits);
 }
