@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 19:32:56 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/07 19:59:09 by abied-ch         ###   ########.fr       */
+/*   Created: 2023/09/22 13:22:36 by codespace         #+#    #+#             */
+/*   Updated: 2023/09/22 13:24:09 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void    ft_print_error(char *error_message)
 {
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+    ft_printf("%s\n", error_message);
+    exit (0)
 }

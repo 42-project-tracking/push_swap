@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:27:51 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/21 16:34:05 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/22 13:30:03 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int ft_swap(t_list **stack_a)
+{
+    
+}
 
 int	sa()//swap first two elements at the top of stack a
 {
