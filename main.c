@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/22 13:37:26 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/23 13:14:16 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,11 @@ static void	ft_free_array(char **arr)
 	free(arr);
 }
 
-static void	ft_create_a_list(char **argv, int argc, t_stack **stack_a)
+static void	ft_create_a_list(char **argv, int argc, t_list **stack_a)
 {
-	t_stack	*new;
+	t_list	*new;
 	char	**arr;
 	int		i;
-	int		*int_ptr;
 
 	i = -1;
 	if (argc == 2)
@@ -48,14 +47,14 @@ static void	ft_create_a_list(char **argv, int argc, t_stack **stack_a)
 
 t_list	*ft_create_b_list(unsigned int size)
 {
-	t_stack			*stack_b;
-	t_stack			*temp;
+	t_list			*stack_b;
+	t_list			*temp;
 	unsigned int	i;
 
 	i = 0;
 	while (i <= size)
 	{
-		temp = ft_lstnew(NULL);
+		temp = ft_lstnew(0);
 		ft_lstadd_front(&stack_b, temp);
 		i++;
 	}
@@ -64,21 +63,29 @@ t_list	*ft_create_b_list(unsigned int size)
 
 int	main(int argc, char *argv[])
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	t_list	**stack_a;
+	t_list	**stack_b;
 
 	if (argc < 2)
 		return (-1);
-	stack_a = (t_stack **)malloc(sizeof(t_stack));
-	stack_b = (t_stack **)malloc(sizeof(t_stack));
+	stack_a = (t_list **)malloc(sizeof(t_list));
+	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_create_a_list(argv, argc, stack_a);
-	while ((*stack_a))
-	{
-		ft_printf("%d\n", *((int *)(*stack_a)->content));
-		*stack_a = (*stack_a)->next;
-	}
+	ft_print_stack(*stack_a);
+	pb(stack_a, stack_b);
+	ft_printf("STACK_A:\n");
+	ft_print_stack(*stack_a);
+	ft_printf("STACK_B:\n");
+	ft_print_stack(*stack_b);
+	pa(stack_a, stack_b);
+	ft_printf("STACK_A:\n");
+	ft_print_stack(*stack_a);
+	ft_printf("STACK_B:\n");
+	ft_print_stack(*stack_b);
 	ft_printf("\na     b\n");
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }
