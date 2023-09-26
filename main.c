@@ -6,13 +6,13 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/26 13:24:21 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/26 15:44:34 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_array(char **arr)
+void	ft_free_array(char **arr)
 {
 	int	i;
 
@@ -44,15 +44,6 @@ static void	ft_create_a_list(char **argv, int argc, t_list **stack_a)
 	if (argc == 2)
 		ft_free_array(arr);
 }
-/*static void	ft_create_a_list(t_list **stack_a)
-{
-	t_list	*new;
-	for (int i = 0; i < 5; i++)
-	{
-		new = ft_lstnew(i);
-		ft_lstadd_back(stack_a, new);
-	}	
-}*/
 
 static void	ft_free_list(t_list **stack_a)
 {
@@ -74,6 +65,8 @@ int	main(int argc, char *argv[])
 	t_list	**stack_b;
 
 	if (argc < 2)
+		return (-1);
+	if (!ft_check_input(argv, argc))
 		return (-1);
 	stack_a = (t_list **)malloc(sizeof(t_list));
 	stack_b = (t_list **)malloc(sizeof(t_list));

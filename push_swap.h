@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:40 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/26 08:39:06 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/26 15:44:23 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-//stack operations
 int		ra(t_list **stack_a);
 int		rb(t_list **stack_b);
 int		rr(t_list **stack_a, t_list **stack_b);
@@ -41,10 +40,11 @@ int		sb(t_list **stack_b);
 int		ss(t_list **stack_a, t_list **stack_b);
 int		pa(t_list **stack_a, t_list **stack_b);
 int		pb(t_list **stack_a, t_list **stack_b);
-
+void	ft_free_array(char **arr);
 void	ft_print_stack(t_list *first);
 void	ft_simplify_numbers(t_list **stack);
 void	ft_print_simple_stack(t_list *first);
 void	ft_radix_sort(t_list **stack_a, t_list **stack_b);
+int		ft_check_input(char **argv, int argc);
 
 #endif
