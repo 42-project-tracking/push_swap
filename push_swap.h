@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:40 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/23 18:35:43 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/26 08:39:06 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ int		pa(t_list **stack_a, t_list **stack_b);
 int		pb(t_list **stack_a, t_list **stack_b);
 
 void	ft_print_stack(t_list *first);
-int		ft_find_most_bits(t_list **stack);
 void	ft_simplify_numbers(t_list **stack);
 void	ft_print_simple_stack(t_list *first);
+void	ft_radix_sort(t_list **stack_a, t_list **stack_b);
 
 #endif
