@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:18:49 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/23 18:56:31 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/26 13:17:11 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_list	*ft_lstnew(int content)
 	t_list	*new;
 
 	new = malloc(sizeof(*new));
+	ft_printf("LSTNEW ALLOCATION %p\n", new);
 	if (!new)
 		return (NULL);
 	new->content = content;
@@ -56,6 +57,8 @@ int	ft_lstsize(t_list *lst)
 	int		i;
 	t_list	*current;
 
+	if (!lst)
+		return (0);
 	current = lst;
 	i = 0;
 	while (current)

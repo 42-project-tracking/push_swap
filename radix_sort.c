@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:39:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 08:54:07 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/26 13:26:02 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,24 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 	int		j;
 	int		stack_size;
 	t_list	*top_a;
-	t_list	*top_b;
-	
+
 	top_a = *stack_a;
-	top_b = *stack_b;
 	max_bits = ft_find_most_bits(stack_a);
 	i = 0;
-	j = 0;
-	stack_size = ft_lstsize(top_a);
+	stack_size = ft_lstsize(*stack_a);
 	while (i < max_bits)
 	{
-		while (j < stack_size)
+		j = 0;
+		while (j++ < stack_size)
 		{
+			top_a = *stack_a;
 			if (((top_a->simple >> i) & 1) == 1)
 				ra(stack_a);
 			else
 				pb(stack_a, stack_b);
-			j++;
 		}
-		ft_printf("STACK B");
-		ft_print_stack(*stack_b);
-		while (ft_lstsize(top_b))
-		{
+		while (ft_lstsize(*stack_b) != 0)
 			pa(stack_a, stack_b);
-		}
 		i++;
 	}
 }
