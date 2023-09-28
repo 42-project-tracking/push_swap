@@ -3,21 +3,81 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 16:00:42 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/28 11:54:29 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_check_input(char **argv, int argc)
+int	ft_duplicates(char **arr)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = -1;
+	while (arr[++i])
+	{
+		temp = ft_atoi(arr[i]);
+		j = i;
+		while (arr[++j])
+		{
+			if (temp == ft_atoi(arr[j]))
+			{
+				ft_printf("Invalid Input: Duplicates\n");
+				return (1);
+			}
+		}
+	}
+	return (0);
+}
+
+int	ft_digits(char **a)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (a[++i])
+	{
+		j = -1;
+		while (a[i][++j])
+		{
+			if (!ft_isdigit(a[i][j]) && (a[i][j] != '+' && a[i][j] != '-'))
+			{
+				ft_printf("Invalid Input: Non Digit Characters\n");
+				return (1);
+			}
+		}
+	}
+	return (0);
+}
+
+int	ft_check_overflow(char **arr)
+{
+	long	temp;
+	int		i;
+
+	i = -1;
+	while (arr[++i])
+	{
+		temp = ft_atoi(arr[i]);
+		if (temp > 2147483648 || temp < -2147483647)
+		{
+			ft_printf("Invalid Input: Integer Overflow\n");
+			return (1);
+		}
+	}
+	return (0);
+}
+
+int	ft_check_input(char **argv, int argc)
 {
 	char	**arr;
 	int		i;
-    long   temp;
-    int     j;
 
 	i = -1;
 	if (argc == 2)
@@ -27,33 +87,13 @@ int		ft_check_input(char **argv, int argc)
 		i = 0;
 		arr = argv;
 	}
-	while (arr[++i])
+	if (ft_duplicates(arr) || ft_digits(arr) || ft_check_overflow(arr))
 	{
-		j = -1;
-		while (arr[i][++j])
-		{
-			temp = ft_atoi(arr[i]);
-            if (temp < -2147483648 || temp > 2147483647)
-            {
-                ft_free_array(arr);
-                ft_printf("Error: Invalid Input\n");
-                return (0);
-            }
-			if (!ft_isdigit(arr[i][j]) && (arr[i][j] != '-' && arr[i][j] != '+'))
-			{
-                ft_free_array(arr);
-                ft_printf("Error: Invalid Input\n");
-                return (0);
-            }
-			if ((arr[i][j] == '-' || arr[i][j] == '+') && (!ft_isdigit(arr[i][j + 1]) && !ft_isdigit(arr[i][j + 1])))
-			{
-                ft_free_array(arr);
-                ft_printf("Error: Invalid Input\n");
-                return (0);
-            }
-		}
+		if (argc == 2)
+			ft_free_array(arr);
+		return (0);
 	}
 	if (argc == 2)
 		ft_free_array(arr);
-    return (1);
+	return (1);
 }
