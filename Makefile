@@ -6,7 +6,7 @@
 #    By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 14:35:18 by codespace         #+#    #+#              #
-#    Updated: 2023/09/28 13:19:19 by abied-ch         ###   ########.fr        #
+#    Updated: 2023/09/28 16:57:05 by abied-ch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS =  errors.c \
 		simplify.c \
 		swap.c \
 		utils.c \
+		simple_sort.c \
 
 OBJS = ${SRCS:.c=.o}
 

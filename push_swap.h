@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:42:40 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/28 13:07:32 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 16:56:32 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	ft_simplify_numbers(t_list **stack);
 void	ft_print_simple_stack(t_list *first);
 void	ft_radix_sort(t_list **stack_a, t_list **stack_b);
 int		ft_check_input(char **argv, int argc);
+void	ft_simple_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

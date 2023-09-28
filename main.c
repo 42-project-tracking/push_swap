@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/28 14:45:42 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:02:42 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_free_array(char **arr)
 	free(arr);
 }
 
-static void	ft_create_a_list(char **argv, int argc, t_list **stack_a)
+static int	ft_create_a_list(char **argv, int argc, t_list **stack_a)
 {
 	t_list	*new;
 	char	**arr;
@@ -43,6 +43,7 @@ static void	ft_create_a_list(char **argv, int argc, t_list **stack_a)
 	}
 	if (argc == 2)
 		ft_free_array(arr);
+	return (i);
 }
 
 static void	ft_free_list(t_list **stack_a)
@@ -63,9 +64,8 @@ int	main(int argc, char *argv[])
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
+	int		int_count;
 
-	if (argc < 2)
-		return (-1);
 	if (!ft_check_input(argv, argc))
 		return (-1);
 	stack_a = (t_list **)malloc(sizeof(t_list));
@@ -76,9 +76,12 @@ int	main(int argc, char *argv[])
 		return (free(stack_a), 0);
 	*stack_a = NULL;
 	*stack_b = NULL;
-	ft_create_a_list(argv, argc, stack_a);
+	int_count = ft_create_a_list(argv, argc, stack_a);
 	ft_simplify_numbers(stack_a);
-	ft_radix_sort(stack_a, stack_b);
+	if (ft_lstsize(*stack_a) <= 5)
+		ft_simple_sort(stack_a, stack_b);
+	else
+		ft_radix_sort(stack_a, stack_b);
 	ft_free_list(stack_a);
 	free(stack_a);
 	free(stack_b);
