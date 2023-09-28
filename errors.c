@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 17:49:12 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 19:08:01 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	dups(char **arr)
 	int		j;
 	long	temp;
 
-	i = -1;
+	i = 0;
 	while (arr[++i])
 	{
 		temp = ft_atoi(arr[i]);
@@ -46,24 +46,24 @@ static int	d(char **a)
 	int	j;
 	int	digit;
 
-	digit = 0;
-	i = -1;
+	if (!a || *a == NULL)
+		return (ft_putendl_fd("Error", 2), 1);
+	digit = 1;
+	i = 0;
 	while (a[++i])
 	{
 		j = -1;
 		while (a[i][++j])
 		{
-			if (!ft_isdigit(a[i][j]) && (a[i][j] != '+' && a[i][j] != '-'))
+			if (!ft_isdigit(a[i][j]))
+			{
 				digit = 0;
-			if (ft_isdigit(a[i][j]))
-				digit = 1;
+				break ;
+			}
 		}
 	}
 	if (digit == 0)
-	{
-		ft_putendl_fd("Error", 2);
-		return (1);
-	}
+		return (ft_putendl_fd("Error", 2), 1);
 	return (0);
 }
 
@@ -105,10 +105,12 @@ static int	ofcheck(char **arr)
 		temp = ft_atoi(arr[i]);
 		if (temp > 2147483647 || temp < -2147483648)
 		{
+			ft_putendl_fd("Error", 2);
 			return (1);
 		}
 		if (!arr[i][0])
 		{
+			ft_putendl_fd("Error", 2);
 			return (1);
 		}
 	}
