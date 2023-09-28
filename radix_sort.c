@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:39:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 22:38:48 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:46:23 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,7 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 	stack_size = ft_lstsize(*stack_a);
 	ft_name(stack_a, stack_b, stack_size, max_bits);
 }
+
+/*sort integers by binary value, keep ones in a, push zeros
+ to b, when one loop done, push back to a
+ shift one bit to the right and repeat*/
