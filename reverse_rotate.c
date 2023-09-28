@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:27:51 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/23 18:54:45 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/28 22:20:57 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,7 @@ int	rrr(t_list **stack_a, t_list **stack_b)
 	return (0);
 }
 
-//while i didnt find last node yet
-//set prev to last
-//keep iterating
-//set prev->next to NULL, making it new last
-//put last at beginning of the list
-//point to start
+/*iterate through list looking for last node and making prev point to 
+the second last
+set prev->next to NULL, making it new last
+put last at beginning of the list (make it point to start)*/
