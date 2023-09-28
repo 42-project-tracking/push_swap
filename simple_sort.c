@@ -6,13 +6,13 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:08:02 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/28 22:05:32 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:12:13 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_sorted(t_list **stack)
+int	ft_is_sorted(t_list **stack)
 {
 	t_list	*top;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:39:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 13:26:02 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/28 22:12:54 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	ft_radix_sort(t_list **stack_a, t_list **stack_b)
 	int		stack_size;
 	t_list	*top_a;
 
+	if (ft_is_sorted(stack_a))
+		return ;
 	top_a = *stack_a;
 	max_bits = ft_find_most_bits(stack_a);
 	i = 0;
