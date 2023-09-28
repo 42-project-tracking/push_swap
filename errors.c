@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 13:27:05 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:50:27 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static int	ft_plus_minus(char **a)
 				ft_putendl_fd("Invalid Input: Non-Digit Character", 2);
 				return (1);
 			}
-			if ((a[i][j] == '-' || a[i][j] == '-') && !ft_isdigit(a[i][j + 1]))
+			if ((a[i][j] == '-' || a[i][j] == '+') && !ft_isdigit(a[i][j + 1]))
 			{
 				ft_putendl_fd("Invalid Input: Non-Digit Character", 2);
 				return (1);
