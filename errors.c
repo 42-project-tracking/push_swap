@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 19:08:01 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:08:41 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	d(char **a)
 	int	digit;
 
 	if (!a || *a == NULL)
-		return (ft_putendl_fd("Error", 2), 1);
+		return (ft_putendl_fd("Error1", 2), 1);
 	digit = 1;
 	i = 0;
 	while (a[++i])
@@ -55,7 +55,7 @@ static int	d(char **a)
 		j = -1;
 		while (a[i][++j])
 		{
-			if (!ft_isdigit(a[i][j]))
+			if (!ft_isdigit(a[i][j]) && a[i][j] != '-' && a[i][j] != '+')
 			{
 				digit = 0;
 				break ;
@@ -63,7 +63,7 @@ static int	d(char **a)
 		}
 	}
 	if (digit == 0)
-		return (ft_putendl_fd("Error", 2), 1);
+		return (ft_putendl_fd("Error2", 2), 1);
 	return (0);
 }
 
