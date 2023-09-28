@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/28 11:59:45 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:45:42 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,16 @@ int	main(int argc, char *argv[])
 	if (!ft_check_input(argv, argc))
 		return (-1);
 	stack_a = (t_list **)malloc(sizeof(t_list));
+	if (!stack_a)
+		return (0);
 	stack_b = (t_list **)malloc(sizeof(t_list));
+	if (!stack_b)
+		return (free(stack_a), 0);
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_create_a_list(argv, argc, stack_a);
 	ft_simplify_numbers(stack_a);
 	ft_radix_sort(stack_a, stack_b);
-	//ft_print_stack(*stack_a);
 	ft_free_list(stack_a);
 	free(stack_a);
 	free(stack_b);

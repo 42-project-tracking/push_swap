@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 17:13:48 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/21 12:50:00 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 14:40:21 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char	*ft_fill_string(unsigned long n, int *strlen)
 		temp = temp / 16;
 		i++;
 	}
-	str = calloc(i + 1, sizeof(char));
+	str = ft_calloc(i + 1, sizeof(char));
 	*strlen = i - 1;
 	return (str);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 10:18:49 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/26 13:35:57 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/28 13:06:15 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		current = current->next;
 	}
 	current->next = new;
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (lst && new)
-	{
-		new->next = *lst;
-		*lst = new;
-	}
 }
 
 t_list	*ft_lstnew(int content)
