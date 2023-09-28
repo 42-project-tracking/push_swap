@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 11:54:29 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 12:15:32 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_duplicates(char **arr)
 {
-	int	i;
-	int	j;
-	int	temp;
+	int		i;
+	int		j;
+	long	temp;
 
 	i = -1;
 	while (arr[++i])
@@ -51,6 +51,17 @@ int	ft_digits(char **a)
 				ft_printf("Invalid Input: Non Digit Characters\n");
 				return (1);
 			}
+			if (a[i][j] != ' '
+					&& ((a[i][j + 1]) == '+' || (a[i][j + 1]) == '-'))
+			{
+				ft_printf("Invalid Input: Non Digit Characters\n");
+				return (1);
+			}
+			if ((a[i][j] == '-' || a[i][j] == '-') && !ft_isdigit(a[i][j + 1]))
+			{
+				ft_printf("Invalid Input: Non Digit Characters\n");
+				return (1);
+			}
 		}
 	}
 	return (0);
@@ -65,7 +76,7 @@ int	ft_check_overflow(char **arr)
 	while (arr[++i])
 	{
 		temp = ft_atoi(arr[i]);
-		if (temp > 2147483648 || temp < -2147483647)
+		if (temp > 2147483647 || temp < -2147483648)
 		{
 			ft_printf("Invalid Input: Integer Overflow\n");
 			return (1);
