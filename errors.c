@@ -6,13 +6,13 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 17:30:59 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/28 17:49:12 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_duplicates(char **arr)
+static int	dups(char **arr)
 {
 	int		i;
 	int		j;
@@ -40,12 +40,12 @@ static int	ft_duplicates(char **arr)
 	return (0);
 }
 
-static int	ft_digits(char **a)
+static int	d(char **a)
 {
 	int	i;
 	int	j;
 	int	digit;
-	
+
 	digit = 0;
 	i = -1;
 	while (a[++i])
@@ -54,10 +54,7 @@ static int	ft_digits(char **a)
 		while (a[i][++j])
 		{
 			if (!ft_isdigit(a[i][j]) && (a[i][j] != '+' && a[i][j] != '-'))
-			{
-				ft_putendl_fd("Error", 2);
-				return (1);
-			}
+				digit = 0;
 			if (ft_isdigit(a[i][j]))
 				digit = 1;
 		}
@@ -70,7 +67,7 @@ static int	ft_digits(char **a)
 	return (0);
 }
 
-static int	ft_plus_minus(char **a)
+static int	signcheck(char **a)
 {
 	int	i;
 	int	j;
@@ -97,7 +94,7 @@ static int	ft_plus_minus(char **a)
 	return (0);
 }
 
-static int	ft_check_overflow(char **arr)
+static int	ofcheck(char **arr)
 {
 	long	temp;
 	int		i;
@@ -108,14 +105,12 @@ static int	ft_check_overflow(char **arr)
 		temp = ft_atoi(arr[i]);
 		if (temp > 2147483647 || temp < -2147483648)
 		{
-			ft_putendl_fd("Error", 2);
 			return (1);
 		}
 		if (!arr[i][0])
 		{
-			ft_putendl_fd("Error", 2);
 			return (1);
-		}	
+		}
 	}
 	return (0);
 }
@@ -138,8 +133,7 @@ int	ft_check_input(char **argv, int argc)
 		i = 0;
 		arr = argv;
 	}
-	if (ft_plus_minus(arr) || ft_digits(arr) || ft_duplicates(arr)
-		|| ft_check_overflow(arr))
+	if (signcheck(arr) || d(arr) || dups(arr) || ofcheck(arr))
 	{
 		if (argc == 2)
 			ft_free_array(arr);
