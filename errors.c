@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/29 11:39:22 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:37:09 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,16 +118,20 @@ static int	ofcheck(char **arr)
 	return (0);
 }
 
-int	ft_check_input(char **argv, int argc)
+void	ft_check_input(char **argv, int argc)
 {
 	char	**arr;
 	int		i;
 
 	i = -1;
 	if (argc < 2)
-		return (0);
+		return ;
 	if (argc == 2)
+	{
 		arr = ft_split(argv[1], ' ');
+		if (!arr)
+			return ;
+	}
 	else
 	{
 		i = 0;
@@ -137,9 +141,8 @@ int	ft_check_input(char **argv, int argc)
 	{
 		if (argc == 2)
 			ft_free_array(arr);
-		return (0);
+		exit (1);
 	}
 	if (argc == 2)
 		ft_free_array(arr);
-	return (1);
 }
