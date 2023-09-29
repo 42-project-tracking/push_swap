@@ -6,19 +6,21 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 22:10:56 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:39:22 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	dups(char **arr)
+static int	dups(char **arr, int argc)
 {
 	int		i;
 	int		j;
 	long	temp;
 
-	i = 0;
+	i = -1;
+	if (argc > 2)
+		i++;
 	while (arr[++i])
 	{
 		temp = ft_atoi(arr[i]);
@@ -31,16 +33,13 @@ static int	dups(char **arr)
 		while (arr[++j])
 		{
 			if (temp == ft_atoi(arr[j]))
-			{
-				ft_putendl_fd("Error", 2);
-				return (1);
-			}
+				return (ft_putendl_fd("Error", 2), 1);
 		}
 	}
 	return (0);
 }
 
-static int	d(char **a)
+static int	d(char **a, int argc)
 {
 	int	i;
 	int	j;
@@ -49,7 +48,9 @@ static int	d(char **a)
 	if (!a || *a == NULL)
 		return (ft_putendl_fd("Error", 2), 1);
 	digit = 1;
-	i = 0;
+	i = -1;
+	if (argc > 2)
+		i++;
 	while (a[++i])
 	{
 		j = -1;
@@ -124,10 +125,7 @@ int	ft_check_input(char **argv, int argc)
 
 	i = -1;
 	if (argc < 2)
-	{
-		ft_putendl_fd("Error", 2);
 		return (0);
-	}
 	if (argc == 2)
 		arr = ft_split(argv[1], ' ');
 	else
@@ -135,7 +133,7 @@ int	ft_check_input(char **argv, int argc)
 		i = 0;
 		arr = argv;
 	}
-	if (signcheck(arr) || d(arr) || dups(arr) || ofcheck(arr))
+	if (signcheck(arr) || d(arr, argc) || dups(arr, argc) || ofcheck(arr))
 	{
 		if (argc == 2)
 			ft_free_array(arr);
