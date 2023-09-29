@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/29 16:37:09 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 19:26:02 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ void	ft_check_input(char **argv, int argc)
 
 	i = -1;
 	if (argc < 2)
-		return ;
+		exit (1);
 	if (argc == 2)
 	{
 		arr = ft_split(argv[1], ' ');
