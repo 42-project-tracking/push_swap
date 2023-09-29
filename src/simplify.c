@@ -6,11 +6,11 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 18:13:51 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 22:24:19 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:40:06 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static t_list	*ft_find_next_smallest(t_list **stack)
 {

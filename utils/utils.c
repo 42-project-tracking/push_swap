@@ -6,11 +6,11 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 13:22:36 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 21:58:45 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:40:34 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 void	ft_print_stack(t_list *first)
 {

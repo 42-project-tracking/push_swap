@@ -6,29 +6,29 @@
 #    By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/26 14:35:18 by codespace         #+#    #+#              #
-#    Updated: 2023/09/29 19:19:28 by abied-ch         ###   ########.fr        #
+#    Updated: 2023/09/29 20:47:27 by abied-ch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS =  errors.c \
-		list_utils.c \
-		main.c \
-		push.c \
-		radix_sort.c \
-		reverse_rotate.c \
-		rotate.c \
-		simplify.c \
-		swap.c \
-		utils.c \
-		simple_sort.c \
+SRCS =	src/main.c \
+		src/radix_sort.c \
+		src/simplify.c \
+		src/simple_sort.c \
+		utils/errors.c \
+		utils/list_utils.c \
+		operations/push.c \
+		operations/reverse_rotate.c \
+		operations/rotate.c \
+		operations/swap.c \
+		utils/utils.c \
 
 OBJS = ${SRCS:.c=.o}
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -Wall -Wextra -Werror -I ./include
 
 RM = rm -rf
 

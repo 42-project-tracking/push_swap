@@ -6,11 +6,11 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 17:39:27 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/28 22:46:23 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:39:59 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 static int	ft_find_most_bits(t_list **stack)
 {
