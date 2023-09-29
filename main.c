@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 12:41:53 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/29 16:19:23 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:54:34 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int	main(int argc, char *argv[])
 	*stack_a = NULL;
 	*stack_b = NULL;
 	ft_create_a_list(argv, argc, stack_a, stack_b);
-	ft_is_sorted(stack_a);
 	ft_simplify_numbers(stack_a);
 	if (ft_lstsize(*stack_a) <= 5)
 		ft_simple_sort(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 15:08:02 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/09/29 16:22:47 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/09/29 16:47:15 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_is_sorted(t_list **stack)
 		else
 			top = top->next;
 	}
-	exit (1);
+	return (1);
 }
 
 static void	ft_sort_3_args(t_list **stack_a)
