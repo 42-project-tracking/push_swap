@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 15:44:38 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/29 20:40:25 by abied-ch         ###   ########.fr       */
+/*   Updated: 2023/10/01 11:17:10 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,11 +121,7 @@ static int	ofcheck(char **arr)
 void	ft_check_input(char **argv, int argc)
 {
 	char	**arr;
-	int		i;
 
-	i = -1;
-	if (argc < 2)
-		exit (1);
 	if (argc == 2)
 	{
 		arr = ft_split(argv[1], ' ');
@@ -133,10 +129,7 @@ void	ft_check_input(char **argv, int argc)
 			return ;
 	}
 	else
-	{
-		i = 0;
 		arr = argv;
-	}
 	if (signcheck(arr) || d(arr, argc) || dups(arr, argc) || ofcheck(arr))
 	{
 		if (argc == 2)
