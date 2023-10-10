@@ -119,14 +119,21 @@ The solution to that problem is running this algorithm on the binary values
 of our integers.
 For this we will use two different bitwise operators:
 
-'>>'    Right Shift: 5 >> 1 shifts the bits of 5 1 step to the right.
-        5 is 101 in binary, so by performing this operation we get 10, which is 2 in binary.
 
-'&'     And: 5 & 1 compares the bits of two numbers and sets the spots where both have 
-        a 1 to 1, the rest to 0. 
+>> ---  Right Shift: 5 >> 1 shifts the bits of 5 1 step to the right.
+
+        5 is 101 in binary, so by performing this operation we get 10, which is 2 in binary.
+        
+
+& ---   And: 5 & 1 compares the bits of two numbers and sets the spots where both have 
+        a 1 to 1, the rest to 0.
+        
         5 is 101 in binary, 1 is 001.
+        
         First digit is 1 for 5, 0 for 1 so we get 0.
-        Second digit is 0 fot both so we get 0 as well.
+        
+        Second digit is 0 for both so we get 0 as well.
+        
         Last digit is 1 for both, so we get 1, which leaves us with 001, aka 1.
 
 We use these to find the maximum number of digits in the biggest number of the list (right shift until 
