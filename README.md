@@ -49,9 +49,9 @@ Example with above stack:
 
 Step 1 (digit in 1s position):
 
-0  -  89**0**;
+0  -  89**|0|**;
 -
-1  -  09**1**;   
+1  -  09**|1|**;   
 -
 2  - 
 -
@@ -61,21 +61,21 @@ Step 1 (digit in 1s position):
 -
 5  -    
 -
-6  -  01**6**;
+6  -  01**|6|**;
 -
-7  -  12**7**;
+7  -  12**|7|**;
 -
 8  -    
 -
-9  -  01**9**;                
+9  -  01**|9|**;                
 
 Step 2 (digit in 10s position):
 
 0  -   
 -
-1  -  0**1**6, 0**1**9;
+1  -  0**|1|**6, 0**|1|**9;
 -
-2  -  1**2**7;
+2  -  1**|2|**7;
 -
 3  - 
 -
@@ -87,15 +87,15 @@ Step 2 (digit in 10s position):
 -
 7  -  
 -
-8  -  8**9**0, 0**9**1; 
+8  -  8**|9|**0, 0**|9|**1; 
 -
 9  -                                         
 
 Step 3 (digit in 100s position):
 
-0  -  0**1**6, 0**1**9, 0**9**1;
+0  -  |0|**1**6, |0|**1**9, |0|**9**1;
 -
-1  -  1**2**7   ;
+1  -  |1|**2**7   ;
 -
 2  -  
 -
@@ -109,9 +109,9 @@ Step 3 (digit in 100s position):
 -
 7  -  
 -
-8  -    
+8  -  |8|**9**0;  
 -
-9  -  8**9**0;
+9  -  
 
 Notice that here, we are using 10 different stacks, whereas for push_swap 
 we are only allowed 2. 
@@ -133,6 +133,10 @@ We use these to find the maximum number of digits in the biggest number of the l
 it becomes 0 and count, basically just like a strlen), and then compare the numbers bits at each spot,
 keep the 1s in stack a, push 0s to stack b, and at the end of each iteration we push everything back to stack a, 
 shift the numbers one more step to the right and start over.
+
+This line is where it happens, it checks the bit of each number at n >> i bit.
+
+'''if (((top_a->simple >> i) & 1) == 1)'''
 
 Bitwise operations are confusing at first, I would recommend you to do some on paper for a bit and it
 will make a lot more sense.
