@@ -16,11 +16,11 @@ The algorithm will first sort the numbers by their last digit, then the second l
 
 Step 1   
 
-890   
-91      
-16       
-127   
-19       
+89**0**   
+9**1**      
+1**6**       
+12**7**   
+1**9**       
 
 Step 1    Step 2    Step 3
 
