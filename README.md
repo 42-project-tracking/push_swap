@@ -14,6 +14,14 @@ Radix sort sorts by digits. Example:
 
 The algorithm will first sort the numbers by their last digit, then the second last, etc:
 
+Step 1   
+
+890   
+91      
+16       
+127   
+19       
+
 Step 1    Step 2    Step 3
 
 890       16        16
