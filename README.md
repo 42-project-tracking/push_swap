@@ -17,18 +17,26 @@ The algorithm will first sort the numbers by their last digit, then the second l
 Step 1   
 
 89**0**   
-9**1**      
-1**6**       
+09**1**      
+01**6**       
 12**7**   
-1**9**       
+01**9**       
 
-Step 1    Step 2    Step 3
+Step 2  
 
-890       16        16
-91        127       19
-16        19        91
-127       890       127
-19        91        890
+0**1**6       
+1**2**7      
+0**1**9       
+8**9**0       
+0**9**1        
+
+Step 3
+
+**0**16
+**0**19
+**0**91
+**1**27
+**8**90
 
 It does so by:
 
@@ -41,22 +49,42 @@ Example with above stack:
 
 Step 1 (digit in 1s position):
 
-0      1      2      3      4      5      6      7      8      9
-890    91                                 16     127           19
+0  -  89**0**   
+1  -  09**1**      
+2  -   
+3  -    
+4  -    
+5  -    
+6  -  01**6**  
+7  -  12**7**  
+8  -    
+9  -  01**9**                 
 
 Step 2 (digit in 10s position):
 
-0      1      2      3      4      5      6      7      8      9
-       16                                               890
-       19                                               91
-       127                                             
+0  -   
+1  -  0**1**6, 0**1**9     
+2  -  1**2**7
+3  -    
+4  -    
+5  -    
+6  -    
+7  -  
+8  -  8**9**0, 0**9**1  
+9  -                                         
 
 Step 3 (digit in 100s position):
 
-0      1      2      3      4      5      6      7      8      9
-16     127                                              890
-19
-91
+0  -  0**1**6, 0**1**9, 0**9**1
+1  -  1**2**7   
+2  -  
+3  -    
+4  -    
+5  -    
+6  -    
+7  -  
+8  -    
+9  -  8**9**0, 
 
 Notice that here, we are using 10 different stacks, whereas for push_swap 
 we are only allowed 2. 
@@ -87,11 +115,19 @@ so it would end up being sorted wrong).
 In order to solve that problem, I indexed the numbers in my stack and sorted them using their indexes.
 Example:
 
-78    -2    100   -18   5
+78    
+-2    
+100
+-18
+5
 
 Becomes:
 
-3     1     4     0     2
+3
+1 
+4 
+0 
+2
 
 We only get graded on the number of operations we run on the stack to sort it, so we can feel free to do some work on
 it before in order to make the final process easier :)).
