@@ -153,18 +153,26 @@ so it would end up being sorted wrong).
 In order to solve that problem, I indexed the numbers in my stack and sorted them using their indexes.
 Example:
 
-78    
--2    
+78   
+-
+-2
+-
 100
+-
 -18
+-
 5
 
 Becomes:
 
 3
-1 
-4 
-0 
+-
+1
+-
+4
+-
+0
+-
 2
 
 We only get graded on the number of operations we run on the stack to sort it, so we can feel free to do some work on
