@@ -67,7 +67,8 @@ Step 1 (digit in 1s position):
 -
 8  -    
 -
-9  -  01**9**;                
+9  -  01**9**;   
+-
 
 Step 2 (digit in 10s position):
 
@@ -89,7 +90,8 @@ Step 2 (digit in 10s position):
 -
 8  -  8**9**0, 0**9**1; 
 -
-9  -                                         
+9  -           
+-
 
 Step 3 (digit in 100s position):
 
@@ -112,6 +114,7 @@ Step 3 (digit in 100s position):
 8  -  8**9**0;  
 -
 9  -  
+-
 
 Notice that here, we are using 10 different stacks, whereas for push_swap 
 we are only allowed 2. 
@@ -162,6 +165,7 @@ Example:
 -18
 -
 5
+-
 
 Becomes:
 
@@ -174,6 +178,7 @@ Becomes:
 0
 -
 2
+-
 
 We only get graded on the number of operations we run on the stack to sort it, so we can feel free to do some work on
 it before in order to make the final process easier :)).
