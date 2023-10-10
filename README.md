@@ -63,10 +63,10 @@ Step 1 (digit in 1s position):
 Step 2 (digit in 10s position):
 
 0  -   
-1  -  0**1**6, 0**1**9     
-
+1  -  0**1**6, 0**1**9
 2  -  1**2**7
-3  -    
+
+3  - 
 4  -    
 5  -    
 6  -    
