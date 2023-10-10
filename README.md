@@ -120,12 +120,12 @@ of our integers.
 For this we will use two different bitwise operators:
 
 
-'>>' ---  Right Shift: 5 >> 1 shifts the bits of 5 1 step to the right.
+">>" ---  Right Shift: 5 >> 1 shifts the bits of 5 1 step to the right.
 
         5 is 101 in binary, so by performing this operation we get 10, which is 2 in binary.
         
 
-'&' ---   And: 5 & 1 compares the bits of two numbers and sets the spots where both have 
+"&" ---   And: 5 & 1 compares the bits of two numbers and sets the spots where both have 
         a 1 to 1, the rest to 0.
         
         5 is 101 in binary, 1 is 001.
