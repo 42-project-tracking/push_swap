@@ -12,6 +12,7 @@
 
 #include "../include/push_swap.h"
 
+//check for duplicates
 static int	dups(char **arr, int argc)
 {
 	int		i;
@@ -39,6 +40,7 @@ static int	dups(char **arr, int argc)
 	return (0);
 }
 
+//check for non digit characters/if there is at least one number (ex: ./push_swap "    ")
 static int	d(char **a, int argc)
 {
 	int	i;
@@ -68,6 +70,7 @@ static int	d(char **a, int argc)
 	return (0);
 }
 
+//check for invalid -/+ positioning
 static int	signcheck(char **a)
 {
 	int	i;
@@ -95,6 +98,7 @@ static int	signcheck(char **a)
 	return (0);
 }
 
+//check for integer overflow
 static int	ofcheck(char **arr)
 {
 	long	temp;
