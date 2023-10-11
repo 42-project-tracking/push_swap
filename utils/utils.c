@@ -68,6 +68,7 @@ int	max(t_list **stack)
 	return (max);
 }
 
+//find the postition of a number in the stack (used for sorting small stacks)
 int	ft_how_far(t_list **stack, int search)
 {
 	t_list	*top;
