@@ -180,13 +180,9 @@ Becomes:
 2
 -
 
-We only get graded on the number of operations we run on the stack to sort it, so we can feel free to do some work on
-it before in order to make the final process easier :)).
+We only get graded on the number of operations we run on the stack to sort it, so we can feel free to do some work on it before in order to make the final process easier :)).
 
-Radix  also does not do well with small stacks, since it will always run mac_bits times no matter what.
+Radix  also does not do well with small stacks, since it will always run max_bits times no matter what.
 During the evaluation there will be tests 3 and 5 values, so I hardcoded thoses cases. (simple_sort.c)
 
 Good luck:)
-
-
-        
