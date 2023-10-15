@@ -48,7 +48,7 @@ The key challenge in this project is that you're only allowed to use two stacks.
 
 Two bitwise operators are used:
 
-``>`` (Right Shift): This shifts the bits of a number to the right. For example, 5 >> 1 shifts the bits of 5 one step to the right, resulting in 2 (in binary, 101 becomes 10).
+``>>`` (Right Shift): This shifts the bits of a number to the right. For example, 5 >> 1 shifts the bits of 5 one step to the right, resulting in 2 (in binary, 101 becomes 10).
 
 ``&`` (And): This compares the bits of two numbers and sets the spots where both have a 1 to 1, the rest to 0. For example, 5 & 1 compares the binary representations of 5 (101) and 1 (001). The result is 1.
 
