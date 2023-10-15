@@ -13,6 +13,7 @@ Consider the following stack:
 ``16 127 91 890 19``
 
 Step 1 (Sorting by Last Digit):
+
 ``
 890
 091
@@ -20,7 +21,9 @@ Step 1 (Sorting by Last Digit):
 127
 019
 ``
+
 Step 2 (Sorting by Second Last Digit):
+
 ``
 016
 019
@@ -28,7 +31,9 @@ Step 2 (Sorting by Second Last Digit):
 890
 091
 ``
+
 Step 3 (Final Sorting by First Digit):
+
 ``016 019 091 127 890``
 
 **Step 2: Implementation Details**
@@ -44,6 +49,7 @@ The key challenge in this project is that you're only allowed to use two stacks.
 Two bitwise operators are used:
 
 ``>`` (Right Shift): This shifts the bits of a number to the right. For example, 5 >> 1 shifts the bits of 5 one step to the right, resulting in 2 (in binary, 101 becomes 10).
+
 ``&`` (And): This compares the bits of two numbers and sets the spots where both have a 1 to 1, the rest to 0. For example, 5 & 1 compares the binary representations of 5 (101) and 1 (001). The result is 1.
 
 These operators help in finding the maximum number of digits and comparing the bits at each spot for sorting.
@@ -59,6 +65,7 @@ This line checks the i-th bit of top_a->simple.
 Radix sort doesn't handle negative numbers well, as -100 has more bits than 100. To solve this, you can index the numbers in your stack and sort them using their indexes.
 
 Example:
+
 ``
 78
 -2
@@ -66,7 +73,9 @@ Example:
 -18
 5
 ``
+
 Becomes:
+
 ``
 3
 1
@@ -74,6 +83,7 @@ Becomes:
 0
 2
 ``
+
 **Step 4: Special Cases**
 
 Radix sort may not perform well with small stacks, as it always runs max_bits times. To address this, you can hardcode solutions for cases with 3 and 5 values (in simple_sort.c).
