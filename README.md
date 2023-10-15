@@ -62,6 +62,7 @@ This line checks the i-th bit of top_a->simple.
 
 **Bitwise Operations Examples**
 
+
 Right Shift (>>) Example:
 
 **Problem:**
@@ -76,6 +77,7 @@ int result = num >> 1;``
 5 in binary is 101.
 
 Shifting one step to the right gives 10, which is 2 in decimal.
+
 
 And (&) Example:
 
@@ -102,6 +104,7 @@ Second bit: 0 & 0 = 0
 Third bit: 1 & 1 = 1
 
 The result is 001, which is 1 in decimal.
+
 
 Checking a Bit in a Number Example:
 
