@@ -104,6 +104,9 @@ Shift the bits of 5 one step to the right.
 ```
 int num = 5;
 int result = num >> 1;
+printf("%d", result);
+OUTPUT
+2
 ```
 
 ### Explanation:
@@ -123,6 +126,9 @@ Perform a bitwise AND operation between 5 and 1.
 int num1 = 5;
 int num2 = 1;
 int result = num1 & num2;
+printf("%d", result);
+OUTPUT
+1
 ```
 
 ### Explanation:
@@ -141,28 +147,6 @@ Third bit: 1 & 1 = 1
 
 The result is 001, which is 1 in decimal.
 
-
-## Checking a Bit in a Number Example:
-
-### Problem:
-
-Check if the 2nd bit (from the right) of 7 is 1.
-
-```
-int num = 7;
-int bit_position = 1; // 0-based index, so 1 corresponds to the 2nd bit from the right
-int is_bit_set = (num >> bit_position) & 1;
-```
-
-### Explanation:
-
-7 in binary is 111.
-
-Shifting one step to the right gives 11, which is 3 in decimal.
-
-Performing a bitwise AND with 1 checks the least significant bit.
-
-The result is 1, indicating that the 2nd bit is set.
 
 ### Additional Note:
 
