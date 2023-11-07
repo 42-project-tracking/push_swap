@@ -50,7 +50,7 @@ Consider the following stack:
 091
 ```
 
-### Step 3 (Final Sorting by First Digit):
+### 3. (Final Sorting by First Digit):
 
 ```
 016 
