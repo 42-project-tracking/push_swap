@@ -166,23 +166,23 @@ Radix sort doesn't handle negative numbers well, as -100 has more bits than 100.
 
 Example:
 
-``
+```
 78
 -2
 100
 -18
 5
-``
+```
 
 Becomes:
 
-``
+```
 3
 1
 4
 0
 2
-``
+```
 
 ## Step 4: Special Cases
 
