@@ -1,4 +1,4 @@
-# Push_swap 42 Project**
+# Push_swap 42 Project
 
 ## Overview
 
@@ -10,7 +10,17 @@ Radix sort is a non-comparative sorting algorithm that works on integers by proc
 
 Consider the following stack:
 
-``16 127 91 890 19``
+```
+16 
+
+127 
+
+91 
+
+890
+
+19
+```
 
 ### 1. (Sorting by Last Digit):
 
@@ -40,7 +50,7 @@ Consider the following stack:
 091
 ```
 
-Step 3 (Final Sorting by First Digit):
+### Step 3 (Final Sorting by First Digit):
 
 ```
 016 
@@ -52,7 +62,7 @@ Step 3 (Final Sorting by First Digit):
 127 
 
 890
-````
+```
 
 ## Step 2: Implementation Details
 
