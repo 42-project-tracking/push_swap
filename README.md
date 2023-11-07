@@ -25,43 +25,43 @@ Consider the following stack:
 ### 1. (Sorting by Last Digit):
 
 ```
-890
+890 (0)
 
-091
+091 (1)
 
-016
+016 (6)
 
-127
+127 (7)
 
-019
+019 (9)
 ```
 
 ### 2. (Sorting by Second Last Digit):
 
 ```
-016
+016 (1)
 
-019
+019 (1)
 
-127
+127 (2)
 
-890
+890 (9)
 
-091
+091 (9)
 ```
 
 ### 3. (Final Sorting by First Digit):
 
 ```
-016 
+016 (0)
 
-019 
+019 (0)
 
-091 
+091 (0)
 
-127 
+127 (1)
 
-890
+890 (8)
 ```
 
 ## Step 2: Implementation Details
