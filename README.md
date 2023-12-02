@@ -196,4 +196,5 @@ Most tricky thing is integer overflow checking, here is a nice implementation of
 https://www.geeksforgeeks.org/write-your-own-atoi/
 Other than that it is pretty straightforward, check the subject for details:)
 
-grade: 84/100 - Radix sort is not fast enough for 100 points (3/5 - 1084 operations for 100 values & 4/5 - 6784 operations for 500 values)
+### grade 
+84/100 - Radix sort is not fast enough for 100 points (3/5 - 1084 operations for 100 values & 4/5 - 6784 operations for 500 values)
